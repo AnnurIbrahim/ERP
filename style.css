@@ -1,0 +1,921 @@
+        body{
+    /*style van boy*/
+          background-color: rgb(23, 219, 240);
+          border-radius: 3px;
+    }
+    /*style voor menu cover**/
+        .topbar {
+          overflow: hidden;
+          background-color: #00365e;
+    }
+        .topbar1 {
+          overflow: hidden;
+          background-color: #00365e;
+    }
+        .topbar2 {
+          overflow: hidden;
+          background-color: #00365e;
+    }  
+        .topbar3 {
+          overflow: hidden;
+          background-color: #00365e;
+    }  
+        .topbar a{
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px 16px;
+          text-decoration: none; 
+          font-size: 20px;
+    }
+        .topbar1 a{
+          font-family: arial, sans-serif;
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px 16px;
+          text-decoration: none; 
+          font-size: 20px;
+    }
+        .topbar2 a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px 16px;
+          text-decoration: none; 
+          font-size: 20px;
+    }
+        .topbar3 a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 15px 16px;
+          text-decoration: none; 
+          font-size: 20px;
+    }
+        .topbar a:hover {
+            background-color: #ddd;
+            color: black;
+    }
+        .topbar1 a:hover {
+          background-color: #ddd;
+          color: black;
+    }
+        .topbar2 a:hover {
+          background-color: #ddd;
+          color: black;
+    }
+        .topbar3 a:hover {
+          background-color: #ddd;
+          color: black;
+    }
+        .topbar .icon {
+          display: none;
+    }
+        .topbar1 .icon {
+          display: none;
+    }
+        .topbar2 .icon {
+          display: none;
+    }
+        .topbar3 .icon {
+          display: none;
+    }
+    /*style van zoekpagina om naar rechtkant te plaatsn*/
+        .topbar form {
+          float: right;
+          margin-top: 8px;
+          margin-right: 16px;  
+    }
+      /*style van zoekpagina om naar rechtkant te plaatsn*/
+        .topbar1 form {
+          float: right;
+          margin-top: 8px;
+          margin-right: 16px;  
+    }
+        .topbar2 form {
+          float: right;
+          margin-top: 7px;
+          margin-right: 16px;  
+    }
+        .topbar3 form {
+          float: right;
+          margin-top: 8px;
+          margin-right: 16px;  
+    }
+      /*style van input */
+        .topbar input[type=text]{
+          padding: 8px;
+          border: none;
+          font-size: 17px;
+          width: 150px;
+    }
+        .topbar1 input[type=text]{
+          font-family: arial, sans-serif;
+          padding: 7px;
+          border: none;
+          font-size: 17px;
+          width: 130px;
+          margin-block-start: 2px;
+    }
+        .topbar2 input[type=text]{
+          font-family: arial, sans-serif;
+          padding: 8px;
+          border: none;
+          font-size: 17px;
+          width: 150px;
+    }
+        .topbar3 input[type=text]{
+          font-family: arial, sans-serif;
+          padding: 8px;
+          border: none;
+          font-size: 17px;
+          width: 150px;
+    }
+        /*style vna de label*/
+        .topbar label[for=search]{
+          font-family: arial, sans-serif;
+          float: center;
+          padding: 8px;
+          font-size: 24px;
+          color: #f2f2f2;
+    }
+    /* style van login pagina*/
+        .topbar5 button[type="submit"] {
+          width: 100%;
+          padding: 10px;
+          background-color: #4CAF50;
+          color: #fff;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+    }
+    /* container style van login pagina*/
+        .container5 {
+          width: 300px;
+          padding: 20px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+    }
+    /*input style van login pagina*/
+        .topbar5 input[type="text"],
+        .topbar5 input[type="password"] {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    /*style van label van login pagina*/
+      .tpbar5 label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    /*login style van a heref*/
+      .topbar5 a {
+        display: block;
+        text-align: center;
+        color: #666;
+        text-decoration: none;
+        font-size: 15px;
+    }
+    
+    /*Style van h1 voor login pagina*/
+    .topbar5 h1 {
+      text-align: center;
+      color: white;
+    }
+  
+        .topbar1 label[for=search]{
+          font-family: arial, sans-serif;
+          float: center;
+          padding: 0px;
+          font-size: 22px;
+          color: #f2f2f2;
+    }
+        .topbar2 label[for=search]{
+          font-family: arial, sans-serif;
+          float: center;
+          padding: 8px;
+          font-size: 26px;
+          color: #f2f2f2;
+    }
+        .topbar3 label[for=search]{
+          font-family: arial, sans-serif;
+          float: center;
+          padding: 8px;
+          font-size: 26px;
+          color: #f2f2f2;
+    }
+        .topbar button[type=submit] {
+          font-family: arial, sans-serif;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          font-size: 21px;
+          cursor: pointer;
+    }
+        .topbar1 button[type=submit] {
+          font-family: arial, sans-serif;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          font-size: 21px;
+          cursor: pointer;
+    }
+        .topbar2 button[type=submit] {
+          font-family: arial, sans-serif;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          font-size: 21px;
+          cursor: pointer;
+    }
+  
+        .topbar3 button[type=submit] {
+          font-family: arial, sans-serif;
+          background-color: #4CAF50;
+          color: white;
+          border: none;
+          padding: 6px 12px;
+          font-size: 21px;
+          cursor: pointer;
+    }
+        .topbar button[type=submit]:hover {
+          background-color: #45a049;
+    }
+        .topbar1 button[type=submit]:hover {
+          background-color: #45a049;
+    }
+        .topbar2 button[type=submit]:hover {
+          background-color: #45a049;
+    }
+        .topbar3 button[type=submit]:hover {
+          background-color: #45a049;
+    }
+      /* style van tabel */
+        table { 
+          float:left;
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          font-size: 18px;
+          margin-bottom: 20px;
+    }
+    /*style van rijen voor alle tablen */
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+    }
+      /*deze code veranderd elke tweede rij naar de onderstaande achtergrond*/
+        tr:nth-child(even) {
+          background-color: #dddddd;
+    }
+        th {
+          background-color: #333;
+          color: white;
+    }
+        table { 
+          float:left;
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          font-size: 15px;
+          margin-bottom: 20px;
+    }
+    /*style van rijen */
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+    }
+        /*deze code veranderd elke tweede rij naar de onderstaande achtergrond*/
+        tr:nth-child(even) {
+          background-color: #dddddd;
+    }
+        h1 {
+          color: #333;
+          font-size: 36px;
+          margin-top: 50px;
+          text-align: center;
+    }
+
+        p {
+          color: #666;
+          font-size: 18px;
+          margin: 20px auto;
+          max-width: 800px;
+          text-align: center;
+    }
+   
+
+     /*responsive voor scherm minder is dan 768px*/
+     @media screen and (max-width: 1250px) {
+        body{
+          background-color: #0c4d61;
+      }
+      .topbar1 {
+        justify-content: space-between;
+        background-color: #00365e;           
+        width: 100%;
+      }
+        .topbar1 a:nth-of-type(n+3) {
+          display: none;
+      }
+        .topbar1.responsive a:nth-of-type(n+4) {
+          display: block;
+      }
+        .topbar1 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar1 form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 16px;
+      }
+        .topbar1 label[for=search]{
+          font-family: arial, sans-serif;
+          float: center;
+          padding: 0px;
+          font-size: 21px;
+          color: #f2f2f2;
+      }
+        .topbar3 {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 100%;
+      }
+        .topbar3 a:nth-of-type(n+3) {
+          display: none;
+      }
+        .topbar3.responsive a:nth-of-type(n+3) {
+          display: block;
+      }
+        .topbar3 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar3 form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 16px;
+      }
+        .topbar2 {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 100%;
+      }
+        .topbar2 a:nth-of-type(n+4) {
+          display: none;
+      }
+        .topbar2.responsive a:nth-of-type(n+4) {
+          display: block;
+      }
+        .topbar2 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar2 form {
+          float: center;
+          margin-top: 12px;
+          margin-right: 16px;
+      }
+        .topbar{
+          background-color: #00365e;           
+          width: 100%;
+          font-size: 12px;
+      }
+        .topbar form {
+          float: right;
+          margin-top: 10px;
+          margin-right: 12px;
+          margin-block-start: 10px;
+      }
+      
+        .topbar a:nth-of-type(n+4) {
+           display: none;
+      }
+        .topbar.responsive a:nth-of-type(n+4) {
+          display: block;
+      }
+        .topbar a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+      }
+        table { 
+          float:left;
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 100%;
+          font-size: 13px;
+          margin-bottom: 30px;
+      }
+    }
+      @media screen and (max-width: 784px) {
+        body {
+          background-color: #45a049;
+      }
+        .topbar {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 1035px;
+      }
+      .topbar a:not(:first-child) {display: none;}
+        .topbar a.icon {
+          float: left;
+          display: block;
+      }
+        .topbar a:nth-of-type(n+4) {
+          display: none;
+      }
+        .topbar.responsive a:nth-of-type(n+4) {
+        display: block;
+      }
+        .topbar a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 16px;
+      }
+        .topbar1 {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 100%;
+      }
+        .topbar1 a:not(:first-child) {display: none;}
+        .topbar a.icon {
+          float: left;
+          display: block;
+      }
+        .topbar1 a:nth-of-type(n+3) {
+          display: none;
+      }
+        .topbar1.responsive a:nth-of-type(n+2) {
+          display: block;
+      }
+        .topbar1 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar1 form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 16px;
+      }
+        #table1 { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          float: center;
+          width: 100%; 
+      }
+        table { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          float: center;
+          width: 70%; 
+      }
+        .topbar2 {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 100%;
+          font-size: 10px;
+      }
+        .topbar2 a:nth-of-type(n+3) {
+          display: none;
+      }
+        .topbar2.responsive a:nth-of-type(n+3) {
+          display: block;
+      }
+        .topbar2 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar2 form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 5px;
+          margin-block-start: 12;
+      } 
+        .topbar2 label[for=search]{
+          float: center;
+          padding: 8px;
+          font-size: 22px;
+          color: #f2f2f2;
+      }
+        .topbar3 {
+          justify-content: space-between;
+          background-color: #00365e;           
+          width: 100%;
+      }
+      	.topbar3 a:not(:first-child) {display: none;}
+        .topbar3 a.icon {
+          float: left;
+          display: block;
+      }
+        .topbar3 a:nth-of-type(n+2) {
+          display: none;
+      }
+        .topbar3.responsive a:nth-of-type(n+2) {
+          display: block;
+      }
+        .topbar3 a.icon {
+          background: block;
+          float: right;
+          display: block;
+          right: 0;
+          top: 0;
+      }
+        .topbar3 form {
+          float: center;
+          margin-top: 8px;
+          margin-right: 16px;
+      }
+        #table { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          float: center;
+          width: 100%; 
+      }
+    }
+    /*responsive voor scherm max is dan 600px*/
+      @media screen and (max-width: 664px) {
+        body{
+          background-color: #9df2cfe9;
+      }
+        .topbar a:not(:first-child) {display: none;}
+        .topbar a.icon {
+          float: left;
+          display: block;
+      }
+        .topbar.responsive {
+          position: relative;
+      }
+        .topbar.responsive .icon {
+           position: absolute;
+           right: 0;
+           top: 0;
+      }
+        .topbar.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      }
+        table { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          margin: 0 auto;
+          float: center;
+          width: 90%;
+          display: block  ;
+      }
+        .topbar{
+          overflow: hidden;
+          background-color: teal;
+           
+      }
+        .topbar1 a:not(:first-child) {
+          display: none;
+      }
+        .topbar1 a.icon {
+          float: right;
+          display: block;
+      }
+        .topbar1.responsive {
+          position: relative;
+      }
+        .topbar1.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+        .topbar1.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      } 
+        .topbar1{
+          overflow: hidden;
+          background-color: #00365e;
+          width: 627px;
+          font-size: 10px;    
+      }
+        .topbar1 form {
+          float: center;
+          margin-top: 12px;
+          margin-right: 16px;
+      }
+        .topbar1 label[for=search]{
+          float: center;
+          padding: 8px;
+          font-size: 22px;
+          color: #f2f2f2;
+      }
+        .topbar1 input[type=text]{
+          padding: 8px;
+          border: none;
+          font-size: 16px;
+          width: 130px;
+      }
+        #table1 { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          margin: 0 auto;
+          float: center;
+          width: 627px;
+          display: block;
+      }
+        .topbar2 a:not(:first-child) {
+          display: none;
+      }
+        .topbar2 a.icon {
+          float: right;
+          display: block;
+      }
+    
+        .topbar2.responsive {
+          position: relative;
+      }
+        .topbar2.responsive .icon {
+           position: absolute;
+           right: 0;
+           top: 0;
+      }
+        .topbar2.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      } 
+        .topbar2{
+          overflow: hidden;
+          background-color: #00365e;
+          width: 100%;
+          font-size: 10px;    
+      }
+        .topbar2 form {
+          float: center;
+          margin-top: 12px;
+          margin-right: 16px;
+      }
+        .topbar2 label[for=search]{
+          float: center;
+          padding: 8px;
+          font-size: 22px;
+          color: #f2f2f2;
+      }
+        .topbar2 input[type=text]{
+          padding: 8px;
+          border: none;
+          font-size: 16px;
+          width: 140px;
+      }
+      .topbar2 a:not(:first-child) {
+          display: none;
+        }
+        .topbar2 a.icon {
+          float: right;
+          display: block;
+      }
+    
+        .topbar2.responsive {
+          position: relative;
+      }
+        .topbar2.responsive .icon {
+           position: absolute;
+           right: 0;
+           top: 0;
+      }
+        .topbar2.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      } 
+        .topbar2{
+          overflow: hidden;
+          background-color: #00365e;
+          width: 100%;
+          font-size: 10px;    
+      }
+        .topbar2 form {
+          float: center;
+          margin-top: 12px;
+          margin-right: 16px;
+      }
+        .topbar2 label[for=search]{
+          float: center;
+          padding: 8px;
+          font-size: 22px;
+          color: #f2f2f2;
+      }
+        .topbar2 input[type=text]{
+          padding: 8px;
+          border: none;
+          font-size: 16px;
+          width: 140px;
+      }
+        .topbar3 a:not(:first-child) {
+          display: none;
+      }
+        .topbar3 a.icon {
+          float: right;
+          display: block;
+      }
+        .topbar3.responsive {
+          position: relative;
+      }
+        .topbar3.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+        .topbar3.responsive a {
+          float: none;
+          display: block;
+          text-align: left;
+      } 
+        .topbar3{
+          overflow: hidden;
+          background-color: #00365e;
+          width: 100%;
+          font-size: 10px;    
+      }
+        .topbar3 form {
+          float: center;
+          margin-top: 12px;
+          margin-right: 16px;
+      }
+        .topbar3 label[for=search]{
+          float: center;
+          padding: 8px;
+          font-size: 22px;
+          color: #f2f2f2;
+      }
+        .topbar3 input[type=text]{
+          padding: 8px;
+          border: none;
+          font-size: 16px;
+          width: 130px;
+      }
+         #table { 
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          margin: 0 auto;
+          float: center;
+          width: 100%;
+          display: block;
+      }
+    }
+    @media screen and (max-width: 500px) {
+      .topbar3 a:not(:first-child) {
+        display: none;
+    }
+      .topbar3 a.icon {
+        float: right;
+        display: block;
+    }
+      .topbar3.responsive {
+        position: relative;
+    }
+      .topbar3.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+      .topbar3.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    } 
+      .topbar3{
+        overflow: hidden;
+        background-color: #00365e;
+        width: 109%;
+        font-size: 10px;    
+    }
+      .topbar3 form {
+        float: center;
+        margin-top: 12px;
+        margin-right: 16px;
+        margin-block-start: 12px;
+    }
+      .topbar3 label[for=search]{
+        float: center;
+        padding: 8px;
+        font-size: 22px;
+        color: #f2f2f2;
+    }
+      .topbar3 input[type=text]{
+        padding: 8px;
+        border: none;
+        font-size: 15px;
+        width: 130px;
+    }
+       #table { 
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        margin: 0 auto;
+        float: center;
+        width: 100%;
+        display: block;
+    }
+      .topbar3 button[type=submit] {
+        font-size: 18px;
+    }
+      .topbar1{
+        overflow: hidden;
+        background-color: #00365e;
+        width: 100%;
+        font-size: 10px;    
+    }
+    #table1 { 
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      margin: 0 auto;
+      float: center;
+      width: 100%;
+      display: block;
+    }
+    .topbar1 label[for=search]{
+      float: center;
+      padding: 0px;
+      font-size: 19px;
+      color: #f2f2f2;
+    }
+    }
+    @media screen and (max-width: 540px) {
+      .topbar1{
+        overflow: hidden;
+        background-color: #00365e;
+        width: 126%;
+        font-size: 10px;    
+    }
+    #table1 { 
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      margin: 0 auto;
+      float: center;
+      width: 100%;
+      display: block;
+    } 
+    .topbar1 label[for=search]{
+      float: center;
+      padding: 0px;
+      font-size: 19px;
+      color: #f2f2f2;
+    }
+    .topbar3 input[type=text]{
+      padding: 6px;
+      border: none;
+      font-size: 15px;
+      width: 130px;
+  }
+  .topbar3{
+    overflow: hidden;
+    background-color: #00365e;
+    width: 109%;
+    font-size: 10px;    
+}
+  }
+  /* Responsieve opmaak voor kleinere schermen */
+@media (max-width: 480px) {
+  .container3 {
+      width: 100%;
+  }
+}
+  
