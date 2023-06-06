@@ -32,12 +32,7 @@
             <a href="Medewerkers.php">Medewerkers</a>
             <a href="Acceptatietest.php">Acceptatietest</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-            <!--Links menu voor zoekpagina-->
-            <form action="/search" method="get">
-                <label for="search">Zoeken</label>
-                <input type="text" id="search" name="q">
-                <button type="submit">Zoeken</button>
-            </form>
+            
         </div>
 	<script>
 	function myFunction() {
