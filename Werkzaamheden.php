@@ -5,8 +5,8 @@ $title="Werkzaamheden";
 include_once "top.inc.php";
 
 connect();
-$result=zoekKlanten();
-toonKlanten($result);
+$result=zoekWerkzaamheden();
+toonWerkzaamheden($result);
 disconnect();
 
 include_once "bottom.inc.php";
