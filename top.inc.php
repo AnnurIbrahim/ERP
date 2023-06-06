@@ -6,6 +6,7 @@
 </head>
 <body>
 <div class=topbar2>
+<a href="Loguit.php">Loguit</a>
   <a href="Home.php">Home</a>
   <a href="Werkzaamheden.php">Werkzaamheden</a>
   <a href="Klanten.php">Klanten</a>

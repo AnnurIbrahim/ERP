@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Controleer of de gebruiker is ingelogd
+if (!isset($_SESSION['Voornaam'])) {
+    header('Location: Login.php');
+    exit;
+}
+?> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,6 +32,7 @@
 <video autoplay muted loop id="myVideo">
   <source src="Video2.mp4" type="video/mp4"></video>
   <div class=topbar2>
+  			<a href="Loguit.php">Loguit</a>
             <a href="Home.php">Home</a>
             <a href="Werkzaamheden.php">Werkzaamheden</a>
 			<a href= "uren_registeren.php">Invullen</a>

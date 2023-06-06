@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// Controleer of de gebruiker is ingelogd
+if (!isset($_SESSION['Voornaam'])) {
+    header('Location: Login.php');
+    exit;
+}
+?>
+<?php
 global $conn;
 $conn = null;
 
@@ -81,7 +90,7 @@ function laadWerkzaamheden()
 {
   global $conn;
   // SQL query to retrieve data from the "werkzaamheden" table
-  $sql = "SELECT ID, Voornaam, Tussenvoegsel, Achternaam, Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
+  $sql = "SELECT ID, MedewerkerID, Opdrachten ID, , Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
   $result = mysqli_query($conn, $sql);
   return $result;
   }
