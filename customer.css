@@ -1,0 +1,92 @@
+/* customer.css */
+
+/* Algemene stijl voor het formulier en de inhoud */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          border-radius: 5px;
+        padding: 30px;
+        }
+    h2 {
+    color: #333; 
+    font-size: 24px; 
+    margin-top: 0;
+    }
+    h3 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 0;
+    }
+    form {
+    margin-bottom: 20px;
+    text-align: left;
+    }
+    label {
+    display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    input[type="text"],
+    select {
+    width: 100%;
+    padding: 12px;
+    order: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+      background-color: #f9f9f9;
+    }
+    
+    input[type="submit"] {
+      padding: 12px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    /* Stijl voor de lijst van klanten */
+    select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    }
+    
+    /* Stijl voor het bewerkingsformulier van de geselecteerde klant */
+    form[name="editForm"] {
+      margin-top: 20px;
+    }
+    
+    /* Stijl voor de knop om klantgegevens op te slaan */
+    form[name="editForm"] input[type="submit"] {
+      margin-top: 20px;
+      background-color: #2196F3;
+    }
+    
+    /* Stijl voor het formulier om een nieuwe klant toe te voegen */
+    form[name="addForm"] {
+    margin-top: 40px;
+    }
+    /* Stijl voor foutmeldingen */
+    .error-message {
+    color: #f44336;
+      font-size: 14px;
+      margin-top: 5px;
+    }

@@ -28,6 +28,7 @@
           text-decoration: none; 
           font-size: 20px;
     }
+   
         .topbar1 a{
           font-family: arial, sans-serif;
           float: left;
@@ -36,7 +37,7 @@
           padding: 15px 16px;
           text-decoration: none; 
           font-size: 20px;
-    }
+}
         .topbar2 a {
           float: left;
           color: #f2f2f2;
@@ -140,55 +141,6 @@
           font-size: 24px;
           color: #f2f2f2;
     }
-    /* style van login pagina*/
-        .topbar5 button[type="submit"] {
-          width: 100%;
-          padding: 10px;
-          background-color: #4CAF50;
-          color: #fff;
-          border: none;
-          border-radius: 3px;
-          cursor: pointer;
-    }
-    /* container style van login pagina*/
-        .container5 {
-          width: 300px;
-          padding: 20px;
-          background-color: #fff;
-          border: 1px solid #ccc;
-          border-radius: 5px;
-    }
-    /*input style van login pagina*/
-        .topbar5 input[type="text"],
-        .topbar5 input[type="password"] {
-        width: 100%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        box-sizing: border-box;
-    }
-    /*style van label van login pagina*/
-      .tpbar5 label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    /*login style van a heref*/
-      .topbar5 a {
-        display: block;
-        text-align: center;
-        color: #666;
-        text-decoration: none;
-        font-size: 15px;
-    }
-    
-    /*Style van h1 voor login pagina*/
-    .topbar5 h1 {
-      text-align: center;
-      color: white;
-    }
-  
         .topbar1 label[for=search]{
           font-family: arial, sans-serif;
           float: center;
@@ -268,7 +220,7 @@
           font-size: 18px;
           margin-bottom: 20px;
     }
-    /*style van rijen voor alle tablen */
+    /*style van rijen */
         td, th {
           border: 1px solid #dddddd;
           text-align: left;
@@ -314,7 +266,6 @@
           max-width: 800px;
           text-align: center;
     }
-   
 
      /*responsive voor scherm minder is dan 768px*/
      @media screen and (max-width: 1250px) {
@@ -912,10 +863,4 @@
     font-size: 10px;    
 }
   }
-  /* Responsieve opmaak voor kleinere schermen */
-@media (max-width: 480px) {
-  .container3 {
-      width: 100%;
-  }
-}
   

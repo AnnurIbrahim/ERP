@@ -1,5 +1,6 @@
 {
-    "require": {
-        "mpdf/mpdf": "^6.1"
-    }
+  "require": {
+    "mpdf/mpdf": "^6.1",
+    "ext-mysqli": "*"
+  }
 }
