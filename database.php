@@ -90,7 +90,7 @@ function laadWerkzaamheden()
 {
   global $conn;
   // SQL query to retrieve data from the "werkzaamheden" table
-  $sql = "SELECT ID, MedewerkerID, Opdrachten ID, , Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
+  $sql = "SELECT ID, MedewerkerID, OpdrachtenID, , Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
   $result = mysqli_query($conn, $sql);
   return $result;
   }

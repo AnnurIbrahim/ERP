@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// Controleer of de gebruiker is ingelogd
+if (!isset($_SESSION['Voornaam'])) {
+    header('Location: Login.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -51,22 +60,22 @@ if (!$conn) {
 if (isset($_GET['zoekterm'])) {
     $zoekterm = $_GET['zoekterm'];
 
-    $sql = "SELECT * FROM werkzaamheden WHERE ID LIKE '%$zoekterm%' OR MedewerkerID  LIKE '%$zoekterm%' OR `Opdrachten ID` LIKE '%$zoekterm%' OR Aantal_Uren LIKE '%$zoekterm%' OR Project_Naam LIKE '%$zoekterm%' OR Omschrijving_Werkzaamheden  LIKE '%$zoekterm%'";
+    $sql = "SELECT * FROM werkzaamheden WHERE ID LIKE '%$zoekterm%' OR MedewerkerID  LIKE '%$zoekterm%' OR `OpdrachtenID` LIKE '%$zoekterm%' OR Aantal_Uren LIKE '%$zoekterm%' OR Project_Naam LIKE '%$zoekterm%' OR Omschrijving_Werkzaamheden  LIKE '%$zoekterm%'";
     $result = mysqli_query($conn, $sql);
    
 } else {
 
     // Query om gegevens op te halen
-    $sql = "SELECT ID, MedewerkerID, `Opdrachten ID`, Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
+    $sql = "SELECT ID, MedewerkerID, `OpdrachtenID`, Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
     $result = mysqli_query($conn, $sql);
 }
 
 if (mysqli_num_rows($result) > 0) {
     // Tabel met gegevens tonen
     echo "<table id='table'>";
-    echo "<tr><th>ID</th><th>MedewerkerID</th><th>Opdrachten ID</th><th>Uren</th><th>Project</th><th>Werkzaamheden</th></tr>";
+    echo "<tr><th>ID</th><th>MedewerkerID</th><th>OpdrachtenID</th><th>Uren</th><th>Project</th><th>Werkzaamheden</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["MedewerkerID"] . "</td><td>" . $row["Opdrachten ID"] . "</td><td>" . $row["Aantal_Uren"] . "</td><td>" . $row["Project_Naam"] . "</td><td>" . $row["Omschrijving_Werkzaamheden"] . "</td></tr>";
+        echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["MedewerkerID"] . "</td><td>" . $row["OpdrachtenID"] . "</td><td>" . $row["Aantal_Uren"] . "</td><td>" . $row["Project_Naam"] . "</td><td>" . $row["Omschrijving_Werkzaamheden"] . "</td></tr>";
     }
     echo "</table>";
 } else {
