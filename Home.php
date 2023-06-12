@@ -35,7 +35,7 @@ if (!isset($_SESSION['Voornaam'])) {
   			<a href="Loguit.php">Loguit</a>
             <a href="Home.php">Home</a>
             <a href="Werkzaamheden.php">Werkzaamheden</a>
-			<a href= "uren_registeren.php">Invullen</a>
+			<a href= "uren_registeren.php">Uren Registreren</a>
             <a href="Klanten.php">Klanten</a>
             <a href="Opdrachten.php">Opdrachten</a>
             <a href="Rooster.php">Rooster</a>

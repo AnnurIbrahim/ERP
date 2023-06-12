@@ -15,6 +15,16 @@ if ($data === false) {
     die("Connection error");
 }
 
+$timeout = 240; // 4 minuten (240 seconden)
+if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) > $timeout) {
+    session_unset(); // Verwijdert alle sessievariabelen
+    session_destroy(); // Beëindigt de sessie
+    header("Location: logout.php"); // Redirect naar uitlogpagina
+    exit();
+} else {
+    $_SESSION["last_activity"] = time(); // Vernieuwt het tijdstempel van de laatste activiteit
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $Voornaam = $_POST["Voornaam"];
     $gebruikerid = $_POST["gebruikerid"];
@@ -28,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $row = mysqli_fetch_assoc($result);
         $voornaam = $row['Voornaam'];
         $_SESSION["Voornaam"] = $voornaam;
+        $_SESSION["last_activity"] = time(); // Slaat het tijdstempel van de laatste activiteit op
         header("Location: Home.php");
         exit();
     } else {
@@ -35,27 +46,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login form</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-image: url("4882066.jpg");
-            background-size: cover;
-        }
-        h1 {
-            text-align: center;
-            color:white;
-        }
-        .error-message {
-            color: red;
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="inloggen.css">
 </head>
 <body>
     <center>

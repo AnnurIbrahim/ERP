@@ -1,17 +1,12 @@
 <?php
-require_once "database.php";
-global $title;
-$title="Rooster";
-include_once "top.inc.php";
+session_start();
 
-connect();
-$result=laadRooster();
-toonRooster($result);
-disconnect();
-
-include_once "bottom.inc.php";
+// Controleer of de gebruiker is ingelogd
+if (!isset($_SESSION['Voornaam'])) {
+    header('Location: Login.php');
+    exit;
+}
 ?>
-
 <html lang="en">
 <head>
   <link rel="stylesheet" href="style.css">
@@ -21,27 +16,37 @@ include_once "bottom.inc.php";
 <div class=topbar>
             <a href="Home.php">Home</a>
             <a href="Werkzaamheden.php">Werkzaamheden</a>
+            <a href="uren_registeren.php">Uren Registreren</a>
             <a href="Klanten.php">Klanten</a>
             <a href="Opdrachten.php">Opdrachten</a>
             <a href="Rooster.php">Rooster</a>
             <a href="Medewerkers.php">Medewerkers</a>
             <a href="Acceptatietest.php">Acceptatietest</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
-           
-      
-   </div>
-   <script>
-    function myFunction() {
-        var x = document.getElementsByClassName("topbar")[0];
-        if (x.className === "topbar") {
-            x.className += " responsive";
-        } else {
-            x.className = "topbar";
+            <!--Links menu voor zoekpagina-->
+            <form action="Rooster.php" method="GET">
+                <label for="search">Zoeken</label>
+                <input type="text" id="zoekterm" name="zoekterm">
+                <button type="submit">Zoeken</button>
+                </div>
+            </form>
+            <script>
+                function myFunction() {
+                    var x = document.getElementsByClassName("topbar")[0];
+                    if (x.className === "topbar") {
+                        x.className += " responsive";
+                    } else {
+                        x.className = "topbar";
+                    }
+                }
+                </script>
+                <?php
+        if (isset($_SESSION["voornaam"])) {
+           // echo "Ingelogde gebruiker: " . $_SESSION["username"];//
         }
-    }
-    </script>
-    <?php
-// Connecten met de database. Inloggegevens.
+        ?>
+        <?php
+        // Connecten met de database. Inloggegevens.
         $servername = "localhost";
         $username = "root";
         $password = "";
@@ -56,23 +61,23 @@ include_once "bottom.inc.php";
         if(isset($_GET['zoekterm'])) {
             $zoekterm = $_GET['zoekterm'];
         
-            $sql = "SELECT * FROM Rooster WHERE ID LIKE '%$zoekterm%' OR Voornaam LIKE '%$zoekterm%' OR Achternaam LIKE '%$zoekterm%' OR Maandag LIKE '%$zoekterm%' OR DinsdagLIKE '%$zoekterm%' OR Woensdag LIKE '%$zoekterm%' OR Donderdag LIKE '%$zoekterm%' OR Vrijdag LIKE '%$zoekterm%' OR Zaterdag LIKE '%$zoekterm%' OR Zondag LIKE '%$zoekterm%'";
+            $sql = "SELECT * FROM Rooster WHERE ID LIKE '%$zoekterm%' OR MedewerkerID LIKE '%$zoekterm%' OR Maandag LIKE '%$zoekterm%' OR Dinsdag LIKE '%$zoekterm%' OR Woensdag LIKE '%$zoekterm%' OR Donderdag LIKE '%$zoekterm%' OR Vrijdag LIKE '%$zoekterm%' OR Zaterdag LIKE '%$zoekterm%' OR Zondag LIKE '%$zoekterm%'";
             $result = mysqli_query($conn, $sql);
            
         } else {
         /* Selecteert de kolommen van de database. ID etc. */
-        $sql = "SELECT ID, voornaam, achternaam, maandag, dinsdag, woensdag, donderdag, donderdag, vrijdag, zaterdag, zondag FROM Rooster";
+        $sql = "SELECT ID, MedewerkerID, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag FROM Rooster";
         $result = mysqli_query($conn, $sql);
         }
         if(mysqli_num_rows($result) > 0) {
         echo "<table>";
              // Output van table headers. Het ziet er beter uit zo.
-        echo "<tr><th>ID</th><th>voornaam</th><th>achternaam</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>Vrijdag</th><th>zaterdag</th><th>zondag</th></tr>";
+        echo "<tr><th>ID</th><th>MedewerkerID</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>Vrijdag</th><th>zaterdag</th><th>zondag</th></tr>";
 
             // Fetched/Pakt gegevens van de kolommen
            while($row = $result->fetch_assoc()){
                 // Output van de tabellen
-                echo "<tr><td>" . $row["ID"]. "</td><td>" . $row["voornaam"]. "</td><td>" . $row["achternaam"].
+                echo "<tr><td>" . $row["ID"]. "</td><td>" . $row["MedewerkerID"].
                 "</td><td>".$row["maandag"]."</td><td>".$row["dinsdag"]."</td><td>".$row["woensdag"]."</td><td>".$row["donderdag"].
                 "</td><td>".$row["vrijdag"]."</td><td>".$row["zaterdag"]."</td><td>".$row["zondag"]; 
             }
@@ -83,18 +88,3 @@ include_once "bottom.inc.php";
         }
             mysqli_close($conn);
     ?>
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="Style.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <h1>Rooster</h1>
-        <?php echo $tabel;?>
-    </body>
-</html>
