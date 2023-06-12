@@ -13,6 +13,7 @@ if (!isset($_SESSION['Voornaam'])) {
   <link rel="stylesheet" href="style.css">
   <title>Werkzaamheden</title>
 </head>
+<img src="gilde-opleidingen.jpg" width="400" height="130"> 
 <body>
 <div class=topbar3>
             <a href="Loguit.php">Loguit</a>

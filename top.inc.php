@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<img src="gilde-opleidingen.jpg" width="400" height="130"> 
 <div class=topbar2>
 <a href="Loguit.php">Loguit</a>
   <a href="Home.php">Home</a>

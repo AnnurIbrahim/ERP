@@ -11,9 +11,19 @@
       width: 100%;
       /* Andere gewenste stijlen */
     }
+    .foto {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 25%;
+      height: 15%;
+    }
   </style>
 </head>
 <body>
+  <div class="foto">
+<img src="gilde-opleidingen.jpg" width="500" height="150">
+  </div>
   <div class="topbar6">
     <h2>Gewerkte uren</h2>
   
