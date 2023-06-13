@@ -3,9 +3,26 @@
 <head>
   <title><?php global $title; print $title; ?></title>
   <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+	.Welkom P{
+		text-align: center;
+		margin-top: -45px;
+	}
+	.Welkom img {
+		margin-top: -11px;
+	}
+  </style>
 </head>
 <body>
-<img src="gilde-opleidingen.jpg" width="400" height="130"> 
+<div class="Welkom">
+  <img src="gilde-opleidingen.jpg" width="200" height="60">
+  <p> 
+                Welcome
+                <strong>
+                    <?php echo $_SESSION['Voornaam']; ?>
+                </strong>
+            </p>
+</div>
 <div class=topbar2>
 <a href="Loguit.php">Loguit</a>
   <a href="Home.php">Home</a>

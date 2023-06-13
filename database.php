@@ -90,7 +90,7 @@ function laadWerkzaamheden()
 {
   global $conn;
   // SQL query to retrieve data from the "werkzaamheden" table
-  $sql = "SELECT ID, MedewerkerID, OpdrachtenID, , Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
+  $sql = "SELECT ID, MedewerkerID, OpdrachtenID, Aantal_Uren, Project_Naam, Omschrijving_Werkzaamheden FROM werkzaamheden";
   $result = mysqli_query($conn, $sql);
   return $result;
   }
@@ -157,9 +157,9 @@ function toonWerkzaamheden(mysqli_result $result)
 {
   // Tabel met gegevens tonen
   echo "<table id='table'>";
-  echo "<tr><th>ID</th><th>Voornaam</th><th>Achternaam</th><th>Uren</th><th>Project</th><th>Werkzaamheden</th></tr>";
+  echo "<tr><th>ID</th><th>MedewerkerID</th><th>OpdrachtenID</th><th>Uren</th><th>Project</th><th>Werkzaamheden</th></tr>";
   while ($row = mysqli_fetch_assoc($result)) {
-    echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["Voornaam"] . "</td><td>" . $row["Achternaam"] . "</td><td>" . $row["Aantal_Uren"] . "</td><td>" . $row["Project_Naam"] . "</td><td>" . $row["Omschrijving_Werkzaamheden"] . "</td></tr>";
+      echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["MedewerkerID"] . "</td><td>" . $row["OpdrachtenID"] . "</td><td>" . $row["Aantal_Uren"] . "</td><td>" . $row["Project_Naam"] . "</td><td>" . $row["Omschrijving_Werkzaamheden"] . "</td></tr>";
   }
   echo "</table>";
   // als er geen rijen gevonden zijn, betekent dit dat er geen overeenkomsten zijn met de databases.

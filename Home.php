@@ -26,16 +26,32 @@ if (!isset($_SESSION['Voornaam'])) {
 		z-index: -1;
 		background-size: cover;
 	}
+	.Welkom P{
+		text-align: center;
+		margin-top: -45px;
+	}
+	.Welkom img {
+		margin-top: -11px;
+	}
 </style>
 </head>
 <body>
-<video autoplay muted loop id="myVideo">
+<video autoplay muted loop id="myVideo">	
   <source src="Video2.mp4" type="video/mp4"></video>
+  <div class="Welkom">
+  <img src="gilde-opleidingen.jpg" width="200" height="60">
+  <p> 
+                Welcome
+                <strong>
+                    <?php echo $_SESSION['Voornaam']; ?>
+                </strong>
+            </p>
+</div>
   <div class=topbar2>
   			<a href="Loguit.php">Loguit</a>
             <a href="Home.php">Home</a>
             <a href="Werkzaamheden.php">Werkzaamheden</a>
-			<a href= "uren_registeren.php">Uren Registreren</a>
+			<a href= "uren_registeren.php">Uren Invullen</a>
             <a href="Klanten.php">Klanten</a>
             <a href="Opdrachten.php">Opdrachten</a>
             <a href="Rooster.php">Rooster</a>
