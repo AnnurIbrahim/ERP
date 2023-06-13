@@ -13,6 +13,24 @@
 	}
   </style>
 </head>
+<style>
+  .logout-btn {
+		background-color: #ff0000;
+		color: #fff;
+		padding: 10px 20px;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.logout-btn i {
+		margin-right: 5px;
+	}
+
+	.logout-btn:hover {
+		background-color: #cc0000;
+	}
+</style>
 <body>
 <div class="Welkom">
   <img src="gilde-opleidingen.jpg" width="200" height="60">
@@ -24,7 +42,7 @@
             </p>
 </div>
 <div class=topbar2>
-<a href="Loguit.php">Loguit</a>
+  <a href="Loguit.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Loguit</a>
   <a href="Home.php">Home</a>
   <a href="Werkzaamheden.php">Werkzaamheden</a>
   <a href= "uren_registeren.php">Uren Registreren</a>

@@ -1,3 +1,5 @@
+<DOCTYPE html>
+  <html>
 <head>
   <link rel="stylesheet" href="uren.css">
   <title>Medewerker</title>
@@ -15,8 +17,8 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 25%;
-      height: 15%;
+      width: 32%;
+      height: 18%;
     }
   </style>
 </head>
@@ -123,4 +125,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
-
+</body>
+</html>

@@ -12,6 +12,8 @@ if (!isset($_SESSION['Voornaam'])) {
 <head>
 	<title>Welkom!</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxx" crossorigin="anonymous" />
+	<style>
 	<style>
 	body {
 		background: transparent;
@@ -33,6 +35,24 @@ if (!isset($_SESSION['Voornaam'])) {
 	.Welkom img {
 		margin-top: -11px;
 	}
+
+	.logout-btn {
+		background-color: #ff0000;
+		color: #fff;
+		padding: 10px 20px;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.logout-btn i {
+		margin-right: 5px;
+	}
+
+	.logout-btn:hover {
+		background-color: #cc0000;
+	}
+	</style>
 </style>
 </head>
 <body>
@@ -48,7 +68,7 @@ if (!isset($_SESSION['Voornaam'])) {
             </p>
 </div>
   <div class=topbar2>
-  			<a href="Loguit.php">Loguit</a>
+  			<a href="Loguit.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Loguit</a>
             <a href="Home.php">Home</a>
             <a href="Werkzaamheden.php">Werkzaamheden</a>
 			<a href= "uren_registeren.php">Uren Invullen</a>
