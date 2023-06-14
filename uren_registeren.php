@@ -78,7 +78,14 @@
       <textarea id="opmerking" name="opmerking"></textarea><br>
       <button type="submit">Opslaan</button>
     </form>
-  </div>
+  <button onclick="goBack()">Go Back</button>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+
+
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Haal de ingevulde waarden op
