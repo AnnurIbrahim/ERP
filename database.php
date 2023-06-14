@@ -71,6 +71,42 @@ function zoekMedewerkers()
   return $result;
 }
 
+
+/**
+ * @return bool|\mysqli_result
+ */
+function zoekAcceptatietesten()
+{
+  global $conn;
+  if (isset($_GET['zoekterm'])) {
+    $zoekterm = $_GET['zoekterm'];
+    $sql = "SELECT * FROM acceptatietesten WHERE TestId LIKE '%$zoekterm%' OR US LIKE '%$zoekterm%' OR functionaliteit LIKE '%$zoekterm%' OR gewenst_resultaat LIKE '%$zoekterm%' OR werkelijk_resultaat LIKE '%$zoekterm%' OR success LIKE '%$zoekterm%' OR datum";
+    $result = mysqli_query($conn, $sql);
+  } else {
+    // SQL query to retrieve data from the "medewerkers" table
+    $sql = "SELECT TestId, US, functionaliteit, gewenst_resultaat, werkelijk_resultaat, success, datum FROM acceptatietesten";
+    $result = $conn->query($sql);
+  }
+  return $result;
+}
+/**
+ * @return bool|\mysqli_result
+ */
+function zoekRooster()
+{
+  global $conn;
+  if (isset($_GET['zoekterm'])) {
+    $zoekterm = $_GET['zoekterm'];
+    $sql = "SELECT * FROM rooster WHERE ID LIKE '%$zoekterm%' OR MedewerkerID LIKE '%$zoekterm%' OR maandag LIKE '%$zoekterm%' OR dinsdag LIKE '%$zoekterm%' OR woensdag LIKE '%$zoekterm%' OR donderdag LIKE '%$zoekterm%' OR vrijdag LIKE '%$zoekterm%' OR zaterdag LIKE '%$zoekterm%' OR zondag ";
+    $result = mysqli_query($conn, $sql);
+  } else {
+    // SQL query to retrieve data from the "medewerkers" table
+    $sql = "SELECT ID, MedewerkerID, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag FROM Rooster";
+    $result = $conn->query($sql);
+  }
+  return $result;
+}
+
 /**
  * @return bool|\mysqli_result
  */
@@ -94,6 +130,30 @@ function laadWerkzaamheden()
   $result = mysqli_query($conn, $sql);
   return $result;
   }
+
+  /**
+ * @return bool|\mysqli_result
+ */
+function laadAcceptatietesten()
+{
+  global $conn;
+  // SQL query to retrieve data from the "werkzaamheden" table
+  $sql = "SELECT TestId, US, functionaliteit, gewenst_resultaat, werkelijk_resultaat, success, datum FROM acceptatietesten";
+  $result = mysqli_query($conn, $sql);
+  return $result;
+  }
+
+/**
+ * @return bool|\mysqli_result
+ */
+function laadRooster()
+{
+  global $conn;
+  // SQL query to retrieve data from the "werkzaamheden" table
+  $sql = "SELECT ID, MedewerkerID, maandag, dinsdag, woensdag, donderdag, vrijdag, zaterdag, zondag FROM Rooster";
+  $result = mysqli_query($conn, $sql);
+  return $result;
+  }
   
   /**
    * @param \mysqli_result $result
@@ -114,6 +174,27 @@ function laadWerkzaamheden()
     }
   }
   
+    /**
+   * @param \mysqli_result $result
+   *
+   * @return void
+   */
+  function toonRooster(mysqli_result $result)
+  {
+    if(mysqli_num_rows($result) > 0) {
+      echo "<table>";
+      echo "<tr><th>ID</th><th>MedewerkerID</th><th>maandag</th><th>dinsdag</th><th>woensdag</th><th>donderdag</th><th>Vrijdag</th><th>zaterdag</th><th>zondag</th></tr>";
+         while($row = $result->fetch_assoc()){
+              echo "<tr><td>" . $row["ID"]. "</td><td>" . $row["MedewerkerID"].
+              "</td><td>".$row["maandag"]."</td><td>".$row["dinsdag"]."</td><td>".$row["woensdag"]."</td><td>".$row["donderdag"].
+              "</td><td>".$row["vrijdag"]."</td><td>".$row["zaterdag"]."</td><td>".$row["zondag"]; 
+          }
+          echo"</table>";
+    } else {
+      echo "Geen resultaten gevonden.";
+    }
+  }
+
   /**
    * @param \mysqli_result $result
    *
@@ -168,4 +249,19 @@ function toonWerkzaamheden(mysqli_result $result)
     echo "No results";
   }
 }
+
+function toonAcceptatietesten(mysqli_result $result)
+{
+    // Tabel met gegevens tonen
+    echo "<table id='table'>";
+    echo "<tr><th>TestID</th><th>US</th><th>functionaliteit</th><th>Gewenst_resultaat</th><th>Werkelijk_resultaat</th><th>Success</th><th>Datum</th></tr>";
+    while ($row = mysqli_fetch_assoc($result)) {
+        echo "<tr><td>" . $row["TestId"] . "</td><td>" . $row["US"] . "</td><td>" . $row["functionaliteit"] . "</td><td>" . $row["gewenst_resultaat"] . "</td><td>" . $row["werkelijk_resultaat"] . "</td><td>" . $row["success"] . "</td><td>" . $row["datum"] . "</td></tr>";
+  }
+  echo "</table>";
+  if (mysqli_num_rows($result) == 0) {
+    echo "No results";
+  }
+}
+
 ?>  
