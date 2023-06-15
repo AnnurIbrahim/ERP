@@ -163,6 +163,9 @@ function laadRooster()
   function toonKlanten(mysqli_result $result)
   {
     if (mysqli_num_rows($result) > 0) {
+      echo '<div class="button-container">';
+    echo '<a href="klantgevens.php" class="button">Klantgegevens Bewerken</a>';
+    echo '</div>';
       echo "<table>";
       echo "<tr><th>ID</th><th>Bedrijfsnaam</th><th>Voornaam</th><th>Tussenvoegsel</th><th>Achternaam</th><th>Functie</th><th>Email</th><th>Telefoonnummer</th><th>Adres</th></tr>";
       while ($row = mysqli_fetch_assoc($result)) {
