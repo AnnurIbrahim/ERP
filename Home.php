@@ -14,7 +14,6 @@ if (!isset($_SESSION['Voornaam'])) {
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxx" crossorigin="anonymous" />
 	<style>
-	<style>
 	body {
 		background: transparent;
 	}

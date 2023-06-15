@@ -48,7 +48,7 @@
         <a href="Loguit.php" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Loguit</a>
         <a href="Home.php">Home</a>
         <a href="Werkzaamheden.php">Werkzaamheden</a>
-        <a href="uren_registeren.php">Uren Registreren</a>
+        <a href="uren_registeren.php">Uren Invullen</a>
         <a href="Klanten.php">Klanten</a>
         <a href="Opdrachten.php">Opdrachten</a>
         <a href="Rooster.php">Rooster</a>
