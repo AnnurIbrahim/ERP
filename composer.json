@@ -1,6 +1,11 @@
 {
-  "require": {
-    "mpdf/mpdf": "^6.1",
-    "ext-mysqli": "*"
-  }
+    "name": "pdf/gen",
+    "autoload": {
+        "psr-4": {
+            "Pdf\\Gen\\": "src/"
+        }
+    },
+    "require": {
+		"mpdf/mpdf": "^8.0"
+	}
 }
