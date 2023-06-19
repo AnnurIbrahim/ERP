@@ -160,7 +160,5 @@ if (isset($_POST['submitNewKlant'])) {
 }
 
 ?>
-
-    
 </body>
 </html>

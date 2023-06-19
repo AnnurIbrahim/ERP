@@ -56,12 +56,12 @@
         <a href="Acceptatietest.php">Acceptatietest</a>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         <!--Links menu voor zoekpagina-->
-        <form action="/search" method="get">
+        <form action="Opdrachten.php " method="GET">
             <label for="search">Zoeken</label>
-            <input type="text" id="search" name="q">
+            <input type="text" id="zoekterm" name="zoekterm">
             <button type="submit">Zoeken</button>
-        </form>
     </div>
+    </form>
     <script>
     function myFunction() {
         var x = document.getElementsByClassName("topbar2")[0];
