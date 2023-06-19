@@ -6,31 +6,30 @@ if (!isset($_SESSION['Voornaam'])) {
     header('Location: Login.php');
     exit;
 }
-?>
-<?php
+
 global $conn;
 $conn = null;
 
 function connect()
 {
-  global $conn;
-  //$servername="localhost";$username  ="root"; $password  =""; $dbname    ="us3/4",$port=3306;
-  $servername = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "us3/4";
-  $port = 3306;
-  $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
+    global $conn;
+    //$servername="localhost";$username  ="root"; $password  =""; $dbname    ="us3/4",$port=3306;
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "us3/4";
+    $port = 3306;
+    $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
-  if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
 }
 
 function disconnect()
 {
-  global $conn;
-  mysqli_close($conn);
+    global $conn;
+    mysqli_close($conn);
 }
 
 /**
@@ -38,20 +37,25 @@ function disconnect()
  */
 function zoekKlanten()
 {
-  global $conn;
-  // Als er een zoekterm is ingevuld
-  if (isset($_GET['zoekterm'])) {
-    $zoekterm = $_GET['zoekterm'];
+    global $conn;
 
-    $sql = "SELECT * FROM klanten WHERE ID LIKE '%$zoekterm%' OR bedrijfsnaam LIKE '%$zoekterm%' OR voornaam LIKE '%$zoekterm%' OR tussenvoegsel LIKE '%$zoekterm%' OR achternaam LIKE '%$zoekterm%' OR functie LIKE '%$zoekterm%' OR email LIKE '%$zoekterm%' OR telefoonnummer LIKE '%$zoekterm%' OR adres LIKE '%$zoekterm%'";
-    $result = mysqli_query($conn, $sql);
-  } else {
-    // Anders haal alle klanten op
-    $sql = "SELECT ID, bedrijfsnaam, voornaam, tussenvoegsel, achternaam, functie, email, telefoonnummer, adres FROM klanten";
-    $result = mysqli_query($conn, $sql);
-  }
-  return $result;
+    // Als er een zoekterm is ingevuld
+    if (isset($_GET['zoekterm'])) {
+        $zoekterm = $_GET['zoekterm'];
+
+        $sql = "SELECT * FROM klanten WHERE ID LIKE '%$zoekterm%' OR bedrijfsnaam LIKE '%$zoekterm%' OR voornaam LIKE '%$zoekterm%' OR tussenvoegsel LIKE '%$zoekterm%' OR achternaam LIKE '%$zoekterm%' OR functie LIKE '%$zoekterm%' OR email LIKE '%$zoekterm%' OR telefoonnummer LIKE '%$zoekterm%' OR adres LIKE '%$zoekterm%'";
+        $result = mysqli_query($conn, $sql);
+
+        return $result;
+    } else {
+        // Anders haal alle klanten op
+        $sql = "SELECT ID, bedrijfsnaam, voornaam, tussenvoegsel, achternaam, functie, email, telefoonnummer, adres FROM klanten";
+        $result = mysqli_query($conn, $sql);
+
+        return $result;
+    }
 }
+
 
 /**
  * @return bool|\mysqli_result
@@ -63,6 +67,7 @@ function zoekMedewerkers()
     $zoekterm = $_GET['zoekterm'];
     $sql = "SELECT * FROM medewerkers WHERE ID LIKE '%$zoekterm%' OR Voornaam LIKE '%$zoekterm%' OR Tussenvoegsel LIKE '%$zoekterm%' OR Achternaam LIKE '%$zoekterm%' OR Geboortedatum LIKE '%$zoekterm%' OR functie LIKE '%$zoekterm%' OR Werkemail LIKE '%$zoekterm%' OR telefoonnummer LIKE '%$zoekterm%' OR adres LIKE '%$zoekterm%'";
     $result = mysqli_query($conn, $sql);
+    return $result;
   } else {
     // SQL query to retrieve data from the "medewerkers" table
     $sql = "SELECT ID, Voornaam, Tussenvoegsel, Achternaam, Geboortedatum, Functie, Werkmail, Kantoorruimte FROM medewerkers";
@@ -164,7 +169,10 @@ function laadRooster()
   {
     if (mysqli_num_rows($result) > 0) {
       echo '<div class="button-container">';
-    echo '<a href="klantgevens.php" class="button">Klantgegevens Bewerken</a>';
+    echo '<a href="klantgevens.php" class="button">Gegevens Bewerken</a>';
+    echo '</div>';
+    echo '<div class="button-container1">';
+    echo '<a href="Nieuw-klant.php" class="button">Nieuw klant toevoegen</a>';
     echo '</div>';
       echo "<table>";
       echo "<tr><th>ID</th><th>Bedrijfsnaam</th><th>Voornaam</th><th>Tussenvoegsel</th><th>Achternaam</th><th>Functie</th><th>Email</th><th>Telefoonnummer</th><th>Adres</th></tr>";

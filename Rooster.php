@@ -5,7 +5,7 @@ $title="Rooster";
 include_once "top.inc.php";
 
 connect();
-$result=laadRooster();
+$result=zoekRooster();
 toonRooster($result);
 disconnect();
 

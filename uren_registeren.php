@@ -76,6 +76,7 @@
       <input type="text" id="taak" name="taak" required><br>
       <label for="opmerking">Opmerking:</label>
       <textarea id="opmerking" name="opmerking"></textarea><br>
+      <input type="hidden" name="medewerkerId" value="<?php echo $medewerkerId; ?>"> <!-- Voeg deze regel toe -->
       <button type="submit">Opslaan</button>
     </form>
   <button onclick="goBack()">Go Back</button>
@@ -130,6 +131,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sluit de databaseverbinding
     $conn->close();
+    // Haal de gegenereerde medewerker-ID op
+$medewerkerId = $conn->insert_id;
 }
 ?>
 </body>
