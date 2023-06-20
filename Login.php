@@ -26,18 +26,20 @@ if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) >
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Voornaam = $_POST["Voornaam"];
+    $Werkmail = $_POST["Werkmail"];
     $gebruikerid = $_POST["gebruikerid"];
-    $sql = "SELECT Voornaam FROM medewerkers WHERE Voornaam = ? AND ID = ?";
+    $sql = "SELECT Werkmail, Voornaam FROM medewerkers WHERE Werkmail = ? AND ID = ?";
     $stmt = mysqli_prepare($data, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $Voornaam, $gebruikerid);
+    mysqli_stmt_bind_param($stmt, "ss", $Werkmail, $gebruikerid);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
     if ($result !== false && $result->num_rows == 1) {
         $row = mysqli_fetch_assoc($result);
-        $voornaam = $row['Voornaam'];
-        $_SESSION["Voornaam"] = $voornaam;
+        $Werkmail = $row['Werkmail'];
+        $Voornaam = $row["Voornaam"];
+        $_SESSION["Voornaam"] = $Voornaam;
+        $_SESSION["Werkmail"] = $Werkmail;
         $_SESSION["last_activity"] = time(); // Slaat het tijdstempel van de laatste activiteit op
         header("Location: Home.php");
         exit();
@@ -65,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                     ?>
                     <form action="" method="post">
-                        <input type="text" name="Voornaam" placeholder="Voornaam">
+                        <input type="text" name="Werkmail" placeholder="Email">
                         <input type="text" name="gebruikerid" placeholder="Gebruiker ID">
                         <input type="submit" value="Inloggen">
                     </form>

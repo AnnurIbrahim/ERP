@@ -2,7 +2,7 @@
 session_start();
 
 // Controleer of de gebruiker is ingelogd
-if (!isset($_SESSION['Voornaam'])) {
+if (!isset($_SESSION['Werkmail'])) {
     header('Location: Login.php');
     exit;
 }
