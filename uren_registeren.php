@@ -82,7 +82,7 @@
   <button onclick="goBack()">Go Back</button>
 <script>
 function goBack() {
-  window.history.back();
+  window.location.href = "home.php";
 }
 </script>
 
