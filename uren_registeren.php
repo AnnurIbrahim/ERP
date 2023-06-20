@@ -130,10 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Sluit de databaseverbinding
-    $conn->close();
-    // Haal de gegenereerde medewerker-ID op
-$medewerkerId = $conn->insert_id;
-}
+    $conn->close();}
 ?>
 </body>
 </html>

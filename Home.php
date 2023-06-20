@@ -2,7 +2,7 @@
 session_start();
 
 // Controleer of de gebruiker is ingelogd
-if (!isset($_SESSION['Voornaam'])) {
+if (!isset($_SESSION['Werkmail'])) {
     header('Location: Login.php');
     exit;
 }
@@ -13,7 +13,6 @@ if (!isset($_SESSION['Voornaam'])) {
 	<title>Welkom!</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxx" crossorigin="anonymous" />
-	<style>
 	<style>
 	body {
 		background: transparent;
