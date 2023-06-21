@@ -15,6 +15,17 @@ if ($data === false) {
     die("Connection error");
 }
 
+// Functie voor het genereren van een CSRF-token
+function generate_csrf_token() {
+    if (!isset($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+    return $_SESSION['csrf_token'];
+}
+
+// Genereren van een CSRF-token bij elke paginaweergave
+generate_csrf_token();
+
 $timeout = 240; // 4 minuten (240 seconden)
 if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) > $timeout) {
     session_unset(); // Verwijdert alle sessievariabelen
@@ -26,30 +37,38 @@ if (isset($_SESSION["last_activity"]) && (time() - $_SESSION["last_activity"]) >
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Werkmail = $_POST["Werkmail"];
-    $gebruikerid = $_POST["gebruikerid"];
-    $sql = "SELECT Werkmail, Voornaam FROM medewerkers WHERE Werkmail = ? AND ID = ?";
-    $stmt = mysqli_prepare($data, $sql);
-    mysqli_stmt_bind_param($stmt, "ss", $Werkmail, $gebruikerid);
-    mysqli_stmt_execute($stmt);
-    $result = mysqli_stmt_get_result($stmt);
-
-    if ($result !== false && $result->num_rows == 1) {
-        $row = mysqli_fetch_assoc($result);
-        $Werkmail = $row['Werkmail'];
-        $Voornaam = $row["Voornaam"];
-        $_SESSION["Voornaam"] = $Voornaam;
-        $_SESSION["Werkmail"] = $Werkmail;
-        $_SESSION["last_activity"] = time(); // Slaat het tijdstempel van de laatste activiteit op
-        header("Location: Home.php");
-        exit();
+    // Controleer of de CSRF-token overeenkomt
+    if (!isset($_POST['csrf_token']) || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+        // CSRF-token komt niet overeen, afwijzen
+        die("CSRF-aanval gedetecteerd!");
     } else {
-        echo '';
+        $Werkmail = $_POST["Werkmail"];
+        $gebruikerid = $_POST["gebruikerid"];
+        $sql = "SELECT Werkmail, Voornaam FROM medewerkers WHERE Werkmail = ? AND ID = ?";
+        $stmt = mysqli_prepare($data, $sql);
+        mysqli_stmt_bind_param($stmt, "ss", $Werkmail, $gebruikerid);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result !== false && $result->num_rows == 1) {
+            $row = mysqli_fetch_assoc($result);
+            $Werkmail = $row['Werkmail'];
+            $Voornaam = $row["Voornaam"];
+            $_SESSION["Voornaam"] = $Voornaam;
+            $_SESSION["Werkmail"] = $Werkmail;
+            $_SESSION["last_activity"] = time(); // Slaat het tijdstempel van de laatste activiteit op
+            header("Location: Home.php");
+            exit();
+        } else {
+            echo '';
+        }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Login form</title>
     <link rel="stylesheet" href="inloggen.css">
@@ -59,22 +78,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div>
             <h1>Uren Registratiesysteem</h1>
             <div class="container5">
-                <div class=topbar5>
+                <div class="topbar5">
                     <h2>Inloggen</h2>
                     <?php
-                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($result) && $result->num_rows != 1) {
-                        echo '<p class="error-message">Onjuist gebruikersnaam of wachtwoord</p>';
+                     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($result) && $result->num_rows != 1) {
+                     echo '<p class="error-message">Onjuist gebruikersnaam of wachtwoord</p>';
                     }
-                    ?>
+                        ?>
                     <form action="" method="post">
-                        <input type="text" name="Werkmail" placeholder="Email">
-                        <input type="text" name="gebruikerid" placeholder="Gebruiker ID">
+                        <div class="form-group">
+                            <label for="Werkmail">Email:</label>
+                            <input type="text" name="Werkmail" id="Werkmail" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="gebruikerid">Gebruiker ID:</label>
+                            <input type="text" name="gebruikerid" id="gebruikerid" placeholder="Gebruiker ID">
+                        </div>
+                        <input type="hidden" name="csrf_token"
+                            value="<?php echo htmlspecialchars(generate_csrf_token(), ENT_QUOTES, 'UTF-8'); ?>">
                         <input type="submit" value="Inloggen">
                     </form>
-                    <a href="forgot_password.php">Wachtwoord vergeten?</a>
+                    <!--a href="forgot_password.php">Wachtwoord vergeten?</a-->
                 </div>
             </div>
         </div>
     </center>
 </body>
+
 </html>

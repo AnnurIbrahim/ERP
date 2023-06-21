@@ -63,7 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" id="titel" name="titel" required><br><br>
 
     <label for="omschrijving">Omschrijving:</label>
-    <textarea id="omschrijving" name="omschrijving" required></textarea><br><br>
+    <textarea id="omschrijving" name="omschrijving" required rows="4" cols="21 "></textarea>
+
 
     <label for="aanvraagdatum">Aanvraagdatum:</label>
     <input type="date" id="aanvraagdatum" name="aanvraagdatum" required><br><br>
@@ -72,6 +73,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="text" id="kennis" name="kennis" required><br><br>
 
     <button type="submit">Toevoegen</button>
+    <script>
+  function submitForm() {
+    // Het formulier indienen
+    document.querySelector("form").submit();
+    
+    // De pagina vernieuwen
+    location.reload();
+  }
+</script>
 </form>
 </body>
 </html>
