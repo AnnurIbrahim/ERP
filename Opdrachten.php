@@ -5,7 +5,7 @@ $title="Opdrachten";
 include_once "top.inc.php";
 
 connect();
-$result=laadOpdrachten();
+$result=zoekOpdrachten();
 toonOpdrachten($result);
 disconnect();
 
