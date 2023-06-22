@@ -55,7 +55,7 @@ if ($result) {
             <div>Gilde Opleidingen</div>
             <div>Bredeweg 235,<br /> 6042 GE, NL</div>
             <div>Nummer</div>
-            <div><a href="mailto:johndoe@test.com">Gildeopleidingen@somalischecamera.de</a></div>
+            <div>Gildeopleidingen@somalischecamera.de</div>
           </div>';
 
     while ($row = $result->fetch_assoc()) {
@@ -63,7 +63,7 @@ if ($result) {
         $html .= '<div><span>PROJECT</span> Website development</div>';
         $html .= '<div><span>CLIENT</span> ' . $row['voornaam'] . '</div>';
         $html .= '<div><span>ADDRESS</span>' . $row['adres'] . '</div>';
-        $html .= '<div><span>EMAIL</span> <a href="mailto:' . $row['email'] . '">' . $row['email'] . '</a></div>';
+        $html .= '<div><span>EMAIL</span>' . $row['email'] . '</a></div>';
         $html .= '<div><span>DATE</span> ' . date('F j, Y') . '</div>';
         $html .= '<div><span>DUE DATE</span> ' . date('F j, Y', strtotime('+2 days')) . '</div>';
         $html .= '</div>';
@@ -87,7 +87,7 @@ if ($result) {
 
     while ($row = $result->fetch_assoc()) {
         $html .= '<tr>';
-        $html .= '<td class="service">' . $row['voornaam'] . '</td>';
+        $html .= '<td class="service"> Voorbeeld </td>';
         $html .= '<td class="desc">' . $row['Omschrijving_Werkzaamheden'] . '</td>';
         $html .= '<td class="unit">$40.00</td>';
         $html .= '<td class="qty">26</td>';
